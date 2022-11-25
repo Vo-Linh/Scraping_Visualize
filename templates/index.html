@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Starnight</title>
+  <link rel="shortcut icon" href="{{ url_for('static',filename='img/logo.png') }}">
+  <!-- Bootstrap -->
+  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"> 
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d4479aea4c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/flexslider.css') }}" type="text/css">
+  <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" type= "text/css" >
+  <link href="{{ url_for('static',filename='css/queries.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/jquery.fancybox.css') }}" rel="stylesheet">
+  <!-- Fonts -->
+  <link
+    href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
+    rel='stylesheet' type='text/css'>
+  
+
+
+</head>
+
+<body>
+  <section class="navigation">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <nav class="pull">
+            <ul class="top-nav">
+              <li><a href="#getstarted">Abstract <span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+              </li>
+              <li><a href="#media">Statistics <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#features">Correlation <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li class="nav-last"><a href="#design">Design <span class="indicator"><i
+                      class="fa fa-angle-right"></i></span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <a href="#"><i class="fa fa-navicon fa-2x nav_slide_button"></i></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <h1 class="animated bounceInDown">Weather App</h1>
+          <p class="animated fadeInUpDelay">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5 text-center">
+          <!-- <a href="http://player.vimeo.com/video/87701971?title=0&amp;byline=0&amp;portrait=0&amp;color=1883ad&amp;autoplay=1" class="hero-play-btn various fancybox.iframe">Play Button</a> -->
+          <a href=" https://player.vimeo.com/video/774529090?h=30c1267d70&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479;autoplay=1"
+            class="hero-play-btn various fancybox.iframe">Play Button</a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="download-now" id="getstarted">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 wp1">
+          <h2>
+            See the sky even better than your own eyes can
+          </h2>
+          <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </p>
+          <a href="#" class="download-btn">Download Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials" id="media">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div id="firstSlider">
+            <ul class="slides">
+              <li>
+                {{ url_for('static',filename='img/statistics/avg_humidity.png') }}
+                <div class="avatar"><img src="{{ url_for('static',filename='img/statistics/avg_windspeed.png') }}" alt="chart"></div>
+                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
+              </li>
+
+              <li>
+                <div class="avatar"><img src="{{ url_for('static',filename='img/statistics/avg_temperature.png') }}" alt="chart"></div>
+                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
+              </li>
+
+              <li>
+                <div class="avatar"><img src="{{ url_for('static',filename='img/statistics/avg_humidity.png') }}" alt="chart"></div>
+                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 features-leftcol wp2">
+          <h1>So Dreamy</h1>
+          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/corr_windspeed_humi.png') }}" alt="chart"></div>
+          <p class="margin-bottom">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. </p>
+          <h1>Apple Store</h1>
+          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/corr_temp_humi.png') }}" alt="chart"></div>
+          <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="col-md-6 features-rightcol wp3">
+          <h1>More Buzz Words</h1>
+          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/corr_windspeed_temp.png') }}" alt="chart"></div>
+          <p class="margin-bottom">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+          <h1>Extra Startup Juice</h1>
+          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/Pearson.png') }}" alt="chart"></div>
+          <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section class="design" id="design"> -->
+    <footer class="footer-area">
+      <div class="footer-bottom text-center">
+          <div class="container">
+              <div class="socials-media footer-social">
+                  <ul>
+                      <li><a href="https://github.com/Vo-Linh"><i class="fab fa-github"></i></a></li>
+                      <li><a href="https://www.linkedin.com/in/linhvo2002/"><i class="fab fa-linkedin"></i></a></li>
+
+                  </ul>
+              </div>
+              <div class="row">
+                  <div class="col-xs-12">
+                      <p>Copyright © <a href="https://vo-linh.github.io/templateWebPortfolio/" target="_blank">Linh Vo</a> 2022</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- </section> -->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="{{ url_for('static',filename='js/jquery.fancybox.pack.js') }}"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery.flexslider.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery.smooth-scroll.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/modernizr.js') }}"></script>
+  <script src="{{ url_for('static',filename='js//waypoints.min.js') }}"></script>
+</body>
+
+</html>
