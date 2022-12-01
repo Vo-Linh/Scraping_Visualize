@@ -19,8 +19,6 @@
   <link
     href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
     rel='stylesheet' type='text/css'>
-  
-
 
 </head>
 
@@ -78,6 +76,12 @@
           </p>
           <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           </p>
+
+          <form action="http://127.0.0.1:5000/", method="POST">
+            <input type="month" name="month">
+            <input type = "submit" value = "submit" />
+          </form>
+
           <a href="#" class="download-btn">Download Now</a>
         </div>
       </div>
@@ -89,21 +93,13 @@
         <div class="col-md-12 text-center">
           <div id="firstSlider">
             <ul class="slides">
-              <li>
-                {{ url_for('static',filename='img/statistics/avg_humidity.png') }}
-                <div class="avatar"><img src="{{ url_for('static',filename='img/statistics/avg_windspeed.png') }}" alt="chart"></div>
-                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
-              </li>
-
-              <li>
-                <div class="avatar"><img src="{{ url_for('static',filename='img/statistics/avg_temperature.png') }}" alt="chart"></div>
-                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
-              </li>
-
-              <li>
-                <div class="avatar"><img src="{{ url_for('static',filename='img/statistics/avg_humidity.png') }}" alt="chart"></div>
-                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
-              </li>
+              
+                {% for p in path_sta %}
+                <li>
+                  <div class="avatar"><img src={{ p }} alt="chart"/></div>
+                  <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
+                </li>
+                {% endfor %}
 
             </ul>
           </div>
@@ -115,20 +111,20 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 features-leftcol wp2">
-          <h1>So Dreamy</h1>
-          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/corr_windspeed_humi.png') }}" alt="chart"></div>
+          <h1>Humidity and Temperature</h1>
+          <div class="avatar"><img src={{ path_corr["humidity_temperature"] }} alt="chart"/></div>
           <p class="margin-bottom">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. </p>
-          <h1>Apple Store</h1>
-          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/corr_temp_humi.png') }}" alt="chart"></div>
+          <h1>Windspeed and Temperature</h1>
+          <div class="avatar"><img src={{ path_corr["windspeed_temperature"] }} alt="chart"/></div>
           <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="col-md-6 features-rightcol wp3">
-          <h1>More Buzz Words</h1>
-          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/corr_windspeed_temp.png') }}" alt="chart"></div>
+          <h1>Windspeed and Humidity</h1>
+          <div class="avatar"><img src={{ path_corr["windspeed_humidity"] }} alt="chart"/></div>
           <p class="margin-bottom">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
-          <h1>Extra Startup Juice</h1>
+          <h1>PEARSON'S R</h1>
           <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/Pearson.png') }}" alt="chart"></div>
           <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -166,6 +162,14 @@
   <script src="{{ url_for('static',filename='js/jquery.smooth-scroll.js') }}"></script>
   <script src="{{ url_for('static',filename='js/modernizr.js') }}"></script>
   <script src="{{ url_for('static',filename='js//waypoints.min.js') }}"></script>
+
+  <script>
+    const monthControl = document.querySelector('input[type="month"]');
+    let userYear = '{{year}}'
+    let userMonth = '{{month}}'
+    monthControl.value = `${userYear}-${userMonth}`
+    console.log(monthControl.value)
+  </script>
 </body>
 
 </html>

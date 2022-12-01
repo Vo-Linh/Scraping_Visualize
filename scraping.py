@@ -4,6 +4,10 @@ import requests
 import pandas as pd
 from datetime import datetime
 
+def getUrl(year, mounth):
+
+    return f"https://www.estesparkweather.net/archive_reports.php?date={year}{mounth}"
+
 def getRawData(url):
     """
     url: link data from website www.estesparkweather.net
@@ -31,4 +35,5 @@ def getRawData(url):
 if __name__ == "__main__":
     url= "https://www.estesparkweather.net/archive_reports.php?date=202211"
     raw_data = getRawData(url)
+    
     print(raw_data[0])

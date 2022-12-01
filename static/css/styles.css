@@ -612,6 +612,56 @@ nav ul li a:focus {
     color: #a58347;
 }
 
+input[type="month"] p {
+    color: #fff;
+    font-size: 16px;
+    margin: 40px 30px 40px 0;
+    line-height: 30px;
+}
+
+input[type="month"] {
+    border: solid 3px #fff;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-size: 14.4px;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+    padding: 5px 7px;
+    display: inline-block;
+    color: #a58347;
+    margin-bottom: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+    color: #a58347;
+    cursor: pointer;
+
+}
+
+input[type="submit"] {
+    background-color: #a5834700;
+    border: solid 3px #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+    padding: 3px 9px;
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 5px;
+    padding-bottom: 6px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    text-decoration: none;
+    border-color: #a58347;
+    color: #a58347;
+}
+
 .testimonials {
     background: #5b6869 url('../img/tBG01.jpg') no-repeat left center;
     -webkit-background-size: cover;
@@ -834,12 +884,14 @@ li.footer-section {
     color: rgb(255 208 95);
 }
 
-.footer-area a{
+.footer-area a {
     color: #878e91;
 }
+
 li:nth-child(6) {
-    list-style-type: none; 
- }
+    list-style-type: none;
+}
+
 /* ==========================================================================
 Animations
 ========================================================================== */

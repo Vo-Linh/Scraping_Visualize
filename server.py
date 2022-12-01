@@ -1,10 +1,61 @@
-from flask import Flask
+from crypt import methods
+from importlib.resources import path
+from aiohttp import request
+from flask import Flask, redirect, url_for, request
 from flask import render_template
 
-app = Flask(__name__) 
+from scraping import getRawData, getUrl
+from convert2DF import convert2DF
+from visualize import statisticsWeather, correlationWeather
 
-@app.route("/")
-def homePage():
-    return render_template("index.html")
+from datetime import datetime
+
+app = Flask(__name__)
+
+
+@app.route("/", methods=['POST', 'GET'])
+def getDate():
+    if request.method == 'POST':
+        month = request.form['month']
+        year, month = month.split("-")
+
+    else:
+        current_dateTime = datetime.now()
+        year = current_dateTime.year
+        month = current_dateTime.month
+        date = current_dateTime.day
+
+        if date < 7:
+            month -= 1
+
+    url = getUrl(year, month)
+    raw_data = getRawData(url)
+    df, date = convert2DF(raw_data)
+
+    # ========== Get Data ===================
+    url = getUrl(year, month)  # year, month
+    raw_data = getRawData(url)
+    df, date = convert2DF(raw_data)
+
+    # ========== Visualize ===================
+    avg_humi_path = statisticsWeather(df, date, "Average humidity")
+    avg_temp_path = statisticsWeather(df, date, "Average temperature")
+    avg_wind_path = statisticsWeather(df, date, "Average windspeed")
+
+    corr_hum_temp = correlationWeather(
+        df, "Average humidity", "Average temperature")
+    corr_wind_temp = correlationWeather(
+        df, "Average windspeed", "Average temperature")
+    corr_wind_hum = correlationWeather(
+        df, "Average windspeed", "Average humidity")
+
+    sta = [avg_humi_path, avg_temp_path, avg_wind_path]
+    corr = {
+        "humidity_temperature": corr_hum_temp,
+        "windspeed_temperature": corr_wind_temp,
+        "windspeed_humidity": corr_wind_hum
+    }
+    return render_template("index.html", path_sta=sta, path_corr=corr, month = month, year = year)
+
 
 app.run()
