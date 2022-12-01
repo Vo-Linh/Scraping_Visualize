@@ -83,12 +83,3 @@ $(document).ready(function() {
     closeEffect: 'none'
   });
 });
-
-// set default input mouth
-// const monthControl = document.querySelector('input[type="month"]');
-// console.log(monthControl)
-// let d = new Date()
-// let year = d.getFullYear()
-// let month = d.getMonth()
-// monthControl.value = `${year}-${month}`
-// console.log(`${year}-${month}`)

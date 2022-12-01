@@ -1,7 +1,5 @@
-from crypt import methods
 from importlib.resources import path
-from aiohttp import request
-from flask import Flask, redirect, url_for, request
+from flask import Flask, request
 from flask import render_template
 
 from scraping import getRawData, getUrl
@@ -58,4 +56,5 @@ def getDate():
     return render_template("index.html", path_sta=sta, path_corr=corr, month = month, year = year)
 
 
-app.run()
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -8,11 +8,11 @@
   <title>Starnight</title>
   <link rel="shortcut icon" href="{{ url_for('static',filename='img/logo.png') }}">
   <!-- Bootstrap -->
-  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"> 
+  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d4479aea4c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ url_for('static',filename='css/flexslider.css') }}" type="text/css">
-  <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" type= "text/css" >
+  <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url_for('static',filename='css/queries.css') }}" rel="stylesheet">
   <link href="{{ url_for('static',filename='css/jquery.fancybox.css') }}" rel="stylesheet">
   <!-- Fonts -->
@@ -32,9 +32,8 @@
               <li><a href="#getstarted">Abstract <span class="indicator"><i class="fa fa-angle-right"></i></span></a>
               </li>
               <li><a href="#media">Statistics <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#features">Correlation <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li class="nav-last"><a href="#design">Design <span class="indicator"><i
-                      class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#features">Correlation <span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -68,21 +67,22 @@
   <section class="download-now" id="getstarted">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 wp1">
+        <div class="col-md-5 wp1">
           <h2>
-            See the sky even better than your own eyes can
+            See the weather even better than your own eyes can
           </h2>
-          <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <p>Instead of reading from a table, excel or csv you can see overview weather on the chart and the correlation
+            among temporary, humidity and windspeed.
           </p>
-          <p>Auae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          <p>You can choose the month of the year if you want to visualize, from 2005 to now.
           </p>
 
-          <form action="http://127.0.0.1:5000/", method="POST">
-            <input type="month" name="month">
-            <input type = "submit" value = "submit" />
+          <form action="http://127.0.0.1:5000/" , method="POST">
+            <input type="month" name="month" min="2005-01">
+            <input type="submit" value="Submit" />
           </form>
 
-          <a href="#" class="download-btn">Download Now</a>
+          <a href="https://github.com/Vo-Linh/Scraping_Visualize" class="download-btn">Download Now</a>
         </div>
       </div>
     </div>
@@ -93,13 +93,13 @@
         <div class="col-md-12 text-center">
           <div id="firstSlider">
             <ul class="slides">
-              
-                {% for p in path_sta %}
-                <li>
-                  <div class="avatar"><img src={{ p }} alt="chart"/></div>
-                  <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
-                </li>
-                {% endfor %}
+
+              {% for p in path_sta %}
+              <li>
+                <div class="avatar"><img src={{ p }} alt="chart" /></div>
+                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
+              </li>
+              {% endfor %}
 
             </ul>
           </div>
@@ -112,43 +112,45 @@
       <div class="row">
         <div class="col-md-6 features-leftcol wp2">
           <h1>Humidity and Temperature</h1>
-          <div class="avatar"><img src={{ path_corr["humidity_temperature"] }} alt="chart"/></div>
+          <div class="avatar"><img src={{ path_corr["humidity_temperature"] }} alt="chart" /></div>
           <p class="margin-bottom">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. </p>
           <h1>Windspeed and Temperature</h1>
-          <div class="avatar"><img src={{ path_corr["windspeed_temperature"] }} alt="chart"/></div>
+          <div class="avatar"><img src={{ path_corr["windspeed_temperature"] }} alt="chart" /></div>
           <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="col-md-6 features-rightcol wp3">
           <h1>Windspeed and Humidity</h1>
-          <div class="avatar"><img src={{ path_corr["windspeed_humidity"] }} alt="chart"/></div>
+          <div class="avatar"><img src={{ path_corr["windspeed_humidity"] }} alt="chart" /></div>
           <p class="margin-bottom">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
           <h1>PEARSON'S R</h1>
-          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/Pearson.png') }}" alt="chart"></div>
+          <div class="avatar"><img src="{{ url_for('static',filename='img/correlation/Pearson.png') }}" alt="chart">
+          </div>
           <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
     </div>
   </section>
   <!-- <section class="design" id="design"> -->
-    <footer class="footer-area">
-      <div class="footer-bottom text-center">
-          <div class="container">
-              <div class="socials-media footer-social">
-                  <ul>
-                      <li><a href="https://github.com/Vo-Linh"><i class="fab fa-github"></i></a></li>
-                      <li><a href="https://www.linkedin.com/in/linhvo2002/"><i class="fab fa-linkedin"></i></a></li>
+  <footer class="footer-area">
+    <div class="footer-bottom text-center">
+      <div class="container">
+        <div class="socials-media footer-social">
+          <ul>
+            <li><a href="https://github.com/Vo-Linh"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/linhvo2002/"><i class="fab fa-linkedin"></i></a></li>
 
-                  </ul>
-              </div>
-              <div class="row">
-                  <div class="col-xs-12">
-                      <p>Copyright © <a href="https://vo-linh.github.io/templateWebPortfolio/" target="_blank">Linh Vo</a> 2022</p>
-                  </div>
-              </div>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>Copyright © <a href="https://vo-linh.github.io/templateWebPortfolio/" target="_blank">Linh Vo</a> 2022
+            </p>
           </div>
+        </div>
       </div>
+    </div>
   </footer>
   <!-- </section> -->
 
@@ -162,7 +164,7 @@
   <script src="{{ url_for('static',filename='js/jquery.smooth-scroll.js') }}"></script>
   <script src="{{ url_for('static',filename='js/modernizr.js') }}"></script>
   <script src="{{ url_for('static',filename='js//waypoints.min.js') }}"></script>
-
+  <!-- Get value month from user -->
   <script>
     const monthControl = document.querySelector('input[type="month"]');
     let userYear = '{{year}}'
