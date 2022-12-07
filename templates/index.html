@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Starnight</title>
+  <!-- <meta property="og:image" content="./static/img/logo.png"> -->
+  <title>Tracking Weather</title>
   <link rel="shortcut icon" href="{{ url_for('static',filename='img/logo.png') }}">
   <!-- Bootstrap -->
   <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -49,15 +50,14 @@
       </div>
       <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
-          <h1 class="animated bounceInDown">Weather App</h1>
+          <h1 class="animated bounceInDown">Tracking Weather</h1>
           <p class="animated fadeInUpDelay">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-2 col-md-offset-5 text-center">
-          <!-- <a href="http://player.vimeo.com/video/87701971?title=0&amp;byline=0&amp;portrait=0&amp;color=1883ad&amp;autoplay=1" class="hero-play-btn various fancybox.iframe">Play Button</a> -->
-          <a href=" https://player.vimeo.com/video/774529090?h=30c1267d70&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479;autoplay=1"
+          <a href=" https://player.vimeo.com/video/778776338?h=3f46a82211&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479;autoplay=1"
             class="hero-play-btn various fancybox.iframe">Play Button</a>
 
         </div>
@@ -77,7 +77,7 @@
           <p>You can choose the month of the year if you want to visualize, from 2005 to now.
           </p>
 
-          <form action="http://127.0.0.1:5000/" , method="POST">
+          <form action="/" , method="POST">
             <input type="month" name="month" min="2005-01">
             <input type="submit" value="Submit" />
           </form>
@@ -97,7 +97,8 @@
               {% for p in path_sta %}
               <li>
                 <div class="avatar"><img src={{ p }} alt="chart" /></div>
-                <h1>I couldnt possibly use my own eyes to look at the stars, thansk Starnught App.</h1>
+                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.</h1>
               </li>
               {% endfor %}
 

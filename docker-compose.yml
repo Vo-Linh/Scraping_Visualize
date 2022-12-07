@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  finalproject:
+    image: finalproject
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      platform: linux/amd64
+      restart: unless-stopped
+    ports:
+      - 8080:8080
